@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hệ Thống Quản Lý Ký Túc Xá Đại Học X</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../main/index.html">Trang chủ</a></li>
+            <li><a href="./stu_manage.html">Sinh Viên</a></li>
+            <li><a href="../dormitory_manager/dor_manage.html">Ký túc xá</a></li>
+            <li><a href="../room_manager/room_manage.html">Phòng</a></li>
+            <li><a href="../allocation/allocation.html">Phân Bố</a></li>
+            <li><a href="../payments/payments.html">Thanh toán</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="students">
+            <h2>Quản Lý Sinh Viên</h2>
+            <form id="studentForm">
+                <label for="firstName">Họ:</label>
+                <input type="text" id="firstName" name="firstName"><br><br>
+                <label for="lastName">Tên:</label>
+                <input type="text" id="lastName" name="lastName"><br><br>
+                <label for="dob">Ngày Sinh:</label>
+                <input type="date" id="dob" name="dob"><br><br>
+                <label for="gender">Giới Tính:</label>
+                <select id="gender" name="gender">
+                    <option value="M">Nam</option>
+                    <option value="F">Nữ</option>
+                </select><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="phone">Số Điện Thoại:</label>
+                <input type="tel" id="phone" name="phone"><br><br>
+                <button type="submit">Lưu</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

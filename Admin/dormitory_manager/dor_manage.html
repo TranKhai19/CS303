@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Ký Túc Xá</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hệ Thống Quản Lý Ký Túc Xá Đại Học X</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../main/index.html">Trang chủ</a></li>
+            <li><a href="../student_manager/stu_manage.html">Sinh Viên</a></li>
+            <li><a href="./dor_manage.html">Ký túc xá</a></li>
+            <li><a href="../room_manager/room_manage.html">Phòng</a></li>
+            <li><a href="../allocation/allocation.html">Phân Bố</a></li>
+            <li><a href="../payments/payments.html">Thanh toán</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="dormitories">
+            <h2>Quản Lý Ký Túc Xá</h2>
+            <form id="dormitoryForm">
+                <label for="dormitoryName">Tên Ký Túc Xá:</label>
+                <input type="text" id="dormitoryName" name="dormitoryName"><br><br>
+                <label for="location">Vị Trí:</label>
+                <input type="text" id="location" name="location"><br><br>
+                <label for="capacity">Sức Chứa:</label>
+                <input type="number" id="capacity" name="capacity"><br><br>
+                <button type="submit">Lưu</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

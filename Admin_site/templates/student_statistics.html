@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dormitory Management System</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <a class="navbar-brand text-danger" href="../templates/Homepage.html">
+            <img src="../static/google.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+            Dormitory Name
+        </a>
+        <div class="ml-auto dropdown">
+            <img src="../static/apple.png" alt="User Avatar" width="30" height="30" class="dropdown-toggle rounded-circle" data-toggle="dropdown">
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Personal Information</a>
+                <a class="dropdown-item" href="#">Change Password</a>
+                <a class="nav-link text-danger" href="../static/login.html">Logout</a>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="../templates/user_list.html" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account Management
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                        <li><a class="dropdown-item" href="../templates/user_list.html">User List</a></li>
+                        <li><a class="dropdown-item" href="../templates/add_user.html">Add User</a></li>
+                        <li><a class="dropdown-item" href="../templates/user_role.html">User Roles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Room Management
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                        <li><a class="dropdown-item" href="./room_list.html">Room List</a></li>
+                        <li><a class="dropdown-item" href="./add_room.html">Add Room</a></li>
+                        <li><a class="dropdown-item" href="./allocate_room.html">Allocate Room</a></li>
+                        <li><a class="dropdown-item" href="./room_statistic.html">Room Statistics</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contract Management</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                        <li><a class="dropdown-item" href="./contract.html">Contract List</a></li>
+                        <li><a class="dropdown-item" href="./contract_payments.html">Contract Payments</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Student Management</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                        <li><a class="dropdown-item" href="./student_list.html">Student List</a></li>
+                        <li><a class="dropdown-item" href="./student_statistics.html">Student Statistics</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Report</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                        <li><a class="dropdown-item" href="./reports.html">Total</a></li>
+                        <li><a class="dropdown-item" href="./occupancy.html">Occupancy Report</a></li>
+                        <li><a class="dropdown-item" href="./revenue.html">Revenue Report</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                                        <a class="nav-link text-danger" href="./settings.html">Settings</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="../static/login.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Student Statistics</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Statistics by Department</h3>
+                <canvas id="departmentChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <h3>Statistics by Year</h3>
+                <canvas id="yearChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctxDept = document.getElementById('departmentChart').getContext('2d');
+        var departmentChart = new Chart(ctxDept, {
+            type: 'bar',
+            data: {
+                labels: ['Computer Science', 'Business', 'Engineering'],
+                datasets: [{
+                    label: '# of Students',
+                    data: [12, 19, 3],
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctxYear = document.getElementById('yearChart').getContext('2d');
+        var yearChart = new Chart(ctxYear, {
+            type: 'pie',
+            data: {
+                labels: ['Freshman', 'Sophomore', 'Junior', 'Senior'],
+                datasets: [{
+                    label: '# of Students',
+                    data: [10, 15, 8, 12],
+                    backgroundColor: ['rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                    borderColor: ['rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + ' students';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

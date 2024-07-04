@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Thanh Toán</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hệ Thống Quản Lý Ký Túc Xá Trường Đại Học Duy Tân</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../main/index.html">Trang chủ</a></li>
+            <li><a href="../student_manager/stu_manage.html">Sinh Viên</a></li>
+            <li><a href="../dormitory_manager/dor_manage.html">Ký túc xá</a></li>
+            <li><a href="../room_manager/room_manage.html">Phòng</a></li>
+            <li><a href="../allocation/allocation.html">Phân Bố</a></li>
+            <li><a href="./payments.html">Thanh toán</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="payments">
+            <h2>Quản Lý Thanh Toán</h2>
+            <form id="paymentForm">
+                <label for="studentID">Mã Sinh Viên:</label>
+                <input type="text" id="studentID" name="studentID"><br><br>
+                <label for="amount">Số Tiền:</label>
+                <input type="number" id="amount" name="amount"><br><br>
+                <label for="paymentDate">Ngày Thanh Toán:</label>
+                <input type="date" id="paymentDate" name="paymentDate"><br><br>
+                <button type="submit">Lưu</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

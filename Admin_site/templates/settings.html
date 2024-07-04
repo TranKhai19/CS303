@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dormitory Management System</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <a class="navbar-brand text-danger" href="../templates/Homepage.html">
+            <img src="../static/google.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+            Dormitory Name
+        </a>
+        <div class="ml-auto dropdown">
+            <img src="../static/apple.png" alt="User Avatar" width="30" height="30" class="dropdown-toggle rounded-circle" data-toggle="dropdown">
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Personal Information</a>
+                <a class="dropdown-item" href="#">Change Password</a>
+                <a class="nav-link text-danger" href="../static/login.html">Logout</a>
+            </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="../templates/user_list.html" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account Management
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                        <li><a class="dropdown-item" href="../templates/user_list.html">User List</a></li>
+                        <li><a class="dropdown-item" href="../templates/add_user.html">Add User</a></li>
+                        <li><a class="dropdown-item" href="../templates/user_role.html">User Roles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Room Management
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                        <li><a class="dropdown-item" href="./room_list.html">Room List</a></li>
+                        <li><a class="dropdown-item" href="./add_room.html">Add Room</a></li>
+                        <li><a class="dropdown-item" href="./allocate_room.html">Allocate Room</a></li>
+                        <li><a class="dropdown-item" href="./room_statistic.html">Room Statistics</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contract Management</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                        <li><a class="dropdown-item" href="./contract.html">Contract List</a></li>
+                        <li><a class="dropdown-item" href="./contract_payments.html">Contract Payments</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Student Management</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                        <li><a class="dropdown-item" href="./student_list.html">Student List</a></li>
+                        <li><a class="dropdown-item" href="./student_statistics.html">Student Statistics</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Report</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                        <li><a class="dropdown-item" href="./reports.html">Total</a></li>
+                        <li><a class="dropdown-item" href="./occupancy.html">Occupancy Report</a></li>
+                        <li><a class="dropdown-item" href="./revenue.html">Revenue Report</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                                        <a class="nav-link text-danger" href="./settings.html">Settings</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger" href="../static/login.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2>Settings</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>General Settings</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="systemName">System Name</label>
+                        <input type="text" class="form-control" id="systemName" placeholder="Enter system name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Contact Email</label>
+                        <input type="email" class="form-control" id="contactEmail" placeholder="Enter contact email">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea class="form-control" id="address" rows="3" placeholder="Enter address"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h4>Notification Settings</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="emailNotifications">Email Notifications</label>
+                        <select class="form-control" id="emailNotifications">
+                            <option value="enabled">Enabled</option>
+                            <option value="disabled">Disabled</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="smsNotifications">SMS Notifications</label>
+                        <select class="form-control" id="smsNotifications">
+                            <option value="enabled">Enabled</option>
+                            <option value="disabled">Disabled</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h4>Security Settings</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password</label>
+                        <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

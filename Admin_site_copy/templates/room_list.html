@@ -1,0 +1,41 @@
+<!-- templates/room-list.html -->
+{% extends "layout.html" %}
+{% block title %}Room List - Dormitory Management System{% endblock %}
+{% block content %}
+    <h2>Room List</h2>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Room Number</th>
+                <th>Capacity</th>
+                <th>Occupants</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example rows (replace with dynamic data from backend) -->
+            <tr>
+                <td>1</td>
+                <td>101</td>
+                <td>4</td>
+                <td>3</td>
+                <td>
+                    <button class="btn btn-sm btn-primary">Edit</button>
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>102</td>
+                <td>3</td>
+                <td>3</td>
+                <td>
+                    <button class="btn btn-sm btn-primary">Edit</button>
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

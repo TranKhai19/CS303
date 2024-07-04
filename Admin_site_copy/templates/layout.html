@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dormitory Management System{% endblock %}</title>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <a class="navbar-brand text-danger" href="#">
+            <img src="../static/google.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+            Dormitory Name
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownAccount" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account Management
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownAccount">
+                        <a class="dropdown-item" href="./user_list.html">User List</a>
+                        <a class="dropdown-item" href="{{ url_for('add_user') }}">Add User</a>
+                        <a class="dropdown-item" href="{{ url_for('user_roles') }}">User Roles</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownRoom" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Room Management
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownRoom">
+                        <a class="dropdown-item" href="{{ url_for('room_list') }}">Room List</a>
+                        <a class="dropdown-item" href="{{ url_for('add_room') }}">Add Room</a>
+                        <a class="dropdown-item" href="{{ url_for('allocate_room') }}">Allocate Room</a>
+                        <a class="dropdown-item" href="{{ url_for('room_statistics') }}">Room Statistics</a>
+                    </div>
+                </li>
+                <!-- Add more navbar items as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
